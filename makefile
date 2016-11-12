@@ -16,8 +16,6 @@ SOIL_OBJECTS	= SOIL/obj/*
 
 EXECUTABLE 	= $(BIN_DIR)/mash3
 
-MESA_GL_VERSION_OVERRIDE = $(shell echo $$MESA_GL_VERSION_OVERRIDE)
-
 .PHONY: all clean
 
 all:	$(TARGET)
@@ -25,11 +23,6 @@ all:	$(TARGET)
 $(TARGET): $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-ifneq ($(MESA_GL_VERSION_OVERRIDE),3.3COMPAT)
-		export MESA_GL_VERSION_OVERRIDE
-		export MESA_GL_VERSION_OVERRIDE="3.3COMPAT"
-		echo "\nexport MESA_GL_VERSION_OVERRIDE=\"3.3COMPAT\"" >> ~/.bashrc
-endif
 	$(MAKE) -C Utility
 	$(MAKE) -C SOIL/projects/makefile
 	g++ -std=c++11 $(INCL_FLAGS) $(OBJECTS) $(UTIL_OBJECTS) $(SOIL_OBJECTS) -lGL -lglut -lGLEW -o $(EXECUTABLE)
