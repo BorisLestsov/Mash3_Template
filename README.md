@@ -30,6 +30,8 @@ Shader: 0:1(10): error: GLSL 3.30 is not supported. Supported versions are: 1.10
 COMPILATION ERROR | Line: 22 File: shaders/grass.vert
 ```
 Then you sould add this line to the end of ".bashrc" file in your home directory:
+```
 export MESA_GL_VERSION_OVERRIDE="3.3COMPAT"
+```
 
 If you your system does not support GLSL 3.10 - replace "shaders" directory and "main.cpp" with the ones from downgrade.
