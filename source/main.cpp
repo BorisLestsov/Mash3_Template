@@ -90,8 +90,8 @@ void RenderLayouts() {
     // Очистка буфера глубины и цветового буфера
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     // Рисуем меши
-    DrawGrass();
     DrawGround();
+    DrawGrass();  
     glutSwapBuffers();
 }
 
