@@ -2,7 +2,7 @@ CXX			= g++
 CFLAGS 		= -Wall -std=c++11
 TARGET 		= mash3
 
-INCL_DIRS	= Utility/include Utility/include/GL Utility/include/VM
+INCL_DIRS	= Utility/include Utility/include/GL Utility/include/VM SOIL/src
 INCL_FLAGS	= $(patsubst %,-I %, $(INCL_DIRS))
 
 SRC_DIR		= source
